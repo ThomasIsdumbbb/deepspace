@@ -1,169 +1,51 @@
-/* Reset & basics */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f0f4f8;
-    color: #222;
-    line-height: 1.6;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
+:root {
+    --primary: #6F1689;
+    --background: #07094E;
+    --secondary: #03054B;
+    --muted: #5E6289;
+    --accent: #A988F4;
+    --text-light: #ffffff;
+    --text-muted: #cccccc;
   }
   
-  /* Dark mode */
-  body.dark {
-    background-color: #121212;
-    color: #ddd;
+.content {
+    padding: 3rem 2rem;
+    max-width: 900px;
+    margin: auto;
   }
   
-  a {
-    color: #556ee6;
-    text-decoration: none;
-  }
-  a:hover {
-    text-decoration: underline;
-  }
-  
-  /* Navbar */
-  .navbar {
-    background-color: #556ee6;
-    color: #fff;
-    padding: 1rem 2rem;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  .navbar .logo {
-    font-weight: 700;
-    font-size: 1.5rem;
-    letter-spacing: 2px;
-  }
-  .navbar ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-  }
-  .navbar ul li {
-    display: flex;
-    align-items: center;
-  }
-  .navbar ul li button {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
-    color: #fff;
-    padding: 0.2rem 0.4rem;
-    transition: color 0.3s ease;
-  }
-  .navbar ul li button:hover {
-    color: #aab4f8;
-  }
-  
-  /* Hero */
-  .hero {
+  .about-hero {
     text-align: center;
-    padding: 4rem 2rem;
-    background: linear-gradient(135deg, #6b7ddb, #a2b9f7);
-    color: white;
-    font-weight: 600;
-    box-shadow: 0 4px 15px rgba(101, 111, 213, 0.4);
-  }
-  .hero h1 {
-    font-size: 3rem;
-    margin-bottom: 1rem;
-  }
-  .hero p {
-    font-size: 1.3rem;
+    margin-bottom: 3rem;
   }
   
-  /* Content Sections */
-  .content-section {
-    max-width: 800px;
-    margin: 3rem auto;
-    padding: 0 1.5rem;
-  }
-  .content-section h2 {
-    margin-bottom: 1rem;
-    font-weight: 700;
-    color: #334080;
-  }
-  .content-section ul {
-    list-style: disc inside;
-    font-size: 1.1rem;
-    line-height: 1.5;
-  }
-  .content-section ul li {
-    margin-bottom: 0.8rem;
-  }
-  .content-section a {
-    font-weight: 600;
+  .mission, .values, .quote {
+    background-color: var(--accent);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 12px;
+    color: var(--text-light);
   }
   
-  /* Quote Section */
-  .quote-section {
-    text-align: center;
-    padding-bottom: 4rem;
+  .values ul {
+    list-style-type: none;
+    padding-left: 0;
   }
-  #quoteText {
+  
+  .values li {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+  
+  .quote {
     font-style: italic;
-    font-size: 1.3rem;
-    margin: 1rem 0 2rem 0;
-    color: #556ee6;
-  }
-  #newQuoteBtn {
-    background-color: #556ee6;
-    border: none;
-    padding: 0.6rem 1.2rem;
-    color: white;
-    font-weight: 600;
-    border-radius: 4px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  #newQuoteBtn:hover {
-    background-color: #4250b5;
-  }
-  
-  /* Footer */
-  footer {
-    background-color: #222;
-    color: #ccc;
-    padding: 1rem 2rem;
+    background-color: var(--primary);
     text-align: center;
-    margin-top: auto;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  footer p {
-    font-size: 0.9rem;
-  }
-  .social-links {
-    display: flex;
-    justify-content: center;
-    gap: 1rem;
-  }
-  .social-links a {
-    font-size: 1.5rem;
-    color: #ccc;
-    transition: color 0.3s ease;
-  }
-  .social-links a:hover {
-    color: #556ee6;
   }
   
-  /* Responsive */
-  @media (max-width: 600px) {
-    .navbar ul {
-      gap: 1rem;
-    }
-    .hero h1 {
-      font-size: 2rem;
-    }
+  .quote-credit {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    margin-top: 1rem;
   }
   

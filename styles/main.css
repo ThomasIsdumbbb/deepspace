@@ -1,143 +1,152 @@
-/* main.css */
+/* main.css – Updated with improved UI and layout */
+
+:root {
+  --primary: #6F1689;
+  --background: #07094E;
+  --secondary: #03054B;
+  --muted: #5E6289;
+  --accent: #A988F4;
+  --text-light: #ffffff;
+  --text-muted: #cccccc;
+  --border-radius: 12px;
+  --shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
 
 body {
   margin: 0;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #07094E;
-  color: #ffffff;
+  background-color: var(--background);
+  color: var(--text-light);
   line-height: 1.6;
 }
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  background-color: var(--secondary);
   padding: 1rem 2rem;
-  background-color: #03054B;
-  border-bottom: 1px solid #5E6289;
+  box-shadow: var(--shadow);
 }
 
 .logo {
   height: 60px;
-  width: auto;
+}
+
+nav {
+  display: flex;
+  gap: 1.5rem;
 }
 
 nav a {
-  margin-left: 1.5rem;
+  color: var(--text-light);
   text-decoration: none;
-  color: #A988F4;
   font-weight: bold;
-  transition: color 0.3s;
+  transition: color 0.2s;
 }
 
 nav a:hover {
-  color: #ffffff;
-}
-
-main.content {
-  padding: 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  color: var(--accent);
 }
 
 .hero {
-  text-align: center;
-  margin-bottom: 3rem;
+  text-align: left;
+  padding: 4rem 2rem;
+  background-color: var(--primary);
+  color: white;
+  box-shadow: var(--shadow);
 }
 
-.hero h1 {
-  font-size: 3rem;
-  color: #A988F4;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-top: 0.5rem;
-}
-
-.button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background-color: #6F1689;
-  color: #fff;
-  text-decoration: none;
-  border-radius: 8px;
-  transition: background-color 0.3s;
-}
-
-.button:hover {
-  background-color: #A988F4;
-}
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 2rem;
+.content {
+  max-width: 900px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: var(--secondary);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
 }
 
 .card {
-  background-color: #1A1D61;
-  border-radius: 12px;
-  padding: 1.5rem;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  background-color: var(--accent);
+  padding: 2rem;
+  margin-bottom: 2rem;
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  color: var(--text-light);
 }
 
 .card h2 {
-  color: #A988F4;
+  margin-top: 0;
+}
+
+.card ul {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.card ul li::before {
+  content: "✦ ";
+  color: var(--text-light);
+}
+
+.quote {
+  font-style: italic;
+  background-color: var(--primary);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.quote-credit {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  margin-top: 1rem;
 }
 
 footer {
+  background-color: var(--muted);
   text-align: center;
   padding: 1rem;
-  background-color: #03054B;
-  color: #A988F4;
-  border-top: 1px solid #5E6289;
-  margin-top: 3rem;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.btn-container {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+button, .btn {
+  padding: 0.6rem 1.2rem;
+  background-color: var(--primary);
+  border: none;
+  color: white;
+  border-radius: var(--border-radius);
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover, .btn:hover {
+  background-color: var(--accent);
 }
 
 form {
-  max-width: 600px;
-  margin: 2rem auto;
-  background-color: #1A1D61;
-  padding: 2rem;
-  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
 }
 
-input,
-textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-  background-color: #07094E;
-  color: #fff;
+input[type="text"], input[type="email"], input[type="password"], textarea {
+  padding: 0.8rem;
+  border-radius: var(--border-radius);
+  border: 1px solid var(--muted);
+  background-color: var(--secondary);
+  color: var(--text-light);
 }
 
-button[type="submit"] {
-  padding: 0.75rem 2rem;
-  background-color: #6F1689;
-  color: #fff;
-  border: none;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-button[type="submit"]:hover {
-  background-color: #A988F4;
-}
-
-ul {
-  padding-left: 1.5rem;
-}
-
-blockquote {
-  font-style: italic;
-  color: #A988F4;
-  margin: 2rem 0;
-  padding-left: 1rem;
-  border-left: 3px solid #A988F4;
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
 }

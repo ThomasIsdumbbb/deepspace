@@ -1,22 +1,219 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Home – DeepSpace</title>
-  <link rel="stylesheet" href="styles/main.css" />
+  <meta charset="UTF-8">
+  <title>DeepSpace - Your Mind Sanctuary</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <style>
+    /* --- Navbar (same as your current version) --- */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #07094E;
+      color: white;
+      animation: slideDown 0.6s ease-out;
+    }
+
+    .left-logo img {
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .left-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .center-nav {
+      display: flex;
+      justify-content: center;
+      flex-grow: 1;
+      gap: 1rem;
+    }
+
+    .center-nav a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .center-nav a:hover {
+      color: #A988F4;
+    }
+
+    .auth-button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #A988F4;
+      border-radius: 8px;
+      background-color: transparent;
+      color: #A988F4;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .auth-button:hover {
+      background-color: #A988F4;
+      color: #07094E;
+    }
+
+    .right-auth {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex: 0 0 auto;
+      margin-left: auto;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* --- Homepage Styling --- */
+    body {
+      background-color: #03054B;
+      color: white;
+      font-family: 'Segoe UI', sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .homepage-content {
+      padding: 2rem;
+    }
+
+    .hero-section {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      background-color: #07094E;
+      padding: 2rem;
+      border-radius: 16px;
+    }
+
+    .hero-text {
+      flex: 1;
+      max-width: 600px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: #A988F4;
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-img img {
+      max-width: 400px;
+      width: 100%;
+    }
+
+    .cta-button {
+      background-color: #A988F4;
+      color: #07094E;
+      padding: 0.75rem 1.5rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background-color: #8d68e4;
+    }
+
+    .features {
+      margin-top: 3rem;
+    }
+
+    .features h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #A988F4;
+    }
+
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+
+    .feature-box {
+      background-color: #03054B;
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 300px;
+      text-align: center;
+    }
+
+    .testimonial {
+      background-color: #07094E;
+      margin: 3rem 0;
+      padding: 2rem;
+      border-left: 6px solid #A988F4;
+    }
+
+    .testimonial blockquote {
+      font-style: italic;
+      font-size: 1.2rem;
+      color: #d0c5f7;
+    }
+
+    .testimonial cite {
+      display: block;
+      margin-top: 0.5rem;
+      text-align: right;
+      color: #8c85bc;
+    }
+
+    .cta-strip {
+      background-color: #5E6289;
+      padding: 2rem;
+      text-align: center;
+      border-radius: 12px;
+      margin-top: 2rem;
+    }
+
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background-color: #07094E;
+      color: #ccc;
+      margin-top: 3rem;
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
     <nav class="navbar">
       <div class="left-logo">
-        <a href="index.html"><img src="assets/logo.png" alt="DeepSpace Logo" class="logo"></a>
+        <a href="index.html">
+          <img src="assets/logo.png" alt="DeepSpace Logo">
+        </a>
       </div>
       <div class="center-nav">
-        <a href="index.html">Home</a>
+        <a href="index.html" class="active">Home</a>
         <a href="about.html">About</a>
         <a href="resources.html">Resources</a>
         <a href="contact.html">Contact</a>
+        <a href="meditation.html">Meditation</a>
       </div>
       <div class="right-auth">
         <a href="login.html" class="auth-button">Log In</a>
@@ -24,34 +221,61 @@
       </div>
     </nav>
   </header>
-  
-  
 
-  <main class="content">
-    <section class="hero">
-      <h1>Welcome to DeepSpace</h1>
-      <p>Your safe space for mental clarity, growth, and awareness.</p>
-      <a href="resources.html" class="button">Explore Resources</a>
+  <main>
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <h1>Your Mind Matters</h1>
+        <p>Helping students manage stress, anxiety, and emotional health with modern tools.</p>
+        <a href="meditation.html" class="cta-button">Start Meditating</a>
+      </div>
+      <div class="hero-image">
+        <img src="assets/hero-illustration.png" alt="Mental Health Illustration">
+      </div>
+      <div class="scroll-down-arrow">
+        <span>&#x25BC;</span>
+      </div>
+      
     </section>
-
+  
+    <!-- Features Grid -->
     <section class="features">
-      <div class="card">
-        <h2>🧠 Mental Wellness</h2>
-        <p>Learn how to manage stress, anxiety, and emotional well-being with tips and practices backed by science and community support.</p>
+      <h2>What We Offer</h2>
+      <div class="feature-grid">
+        <div class="feature-card">
+          <h3>Meditation Hub</h3>
+          <p>Choose from 20+ relaxing soundtracks and guided timers to help you unwind anytime.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Student Stress Tips</h3>
+          <p>Quick relief methods for exam anxiety, social stress, or relationship troubles.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Mental Health Test</h3>
+          <p>A simple assessment to check your current mental wellness and suggest next steps.</p>
+        </div>
+        <div class="feature-card">
+          <h3>AI Therapy Chat</h3>
+          <p>Chat in real-time with our AI assistant trained to help students talk through problems.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Calming Sounds</h3>
+          <p>Rain, wind, forest, ocean, and more ambient loops to improve focus or sleep.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Human Support (Coming Soon)</h3>
+          <p>We’re building a trusted team of therapists to guide you when you need it most.</p>
+        </div>
       </div>
-      <div class="card">
-        <h2>🎧 For Teens, By Teens</h2>
-        <p>Discover stories and strategies crafted by teens who understand what you're going through. You're not alone on this journey.</p>
-      </div>
-      <div class="card">
-        <h2>🔒 Anonymous & Safe</h2>
-        <p>Everything you share stays private. Find answers, support, and peace without fear of judgment or exposure.</p>
-      </div>
+    </section>
+  
+    <!-- Quote / Call to Action -->
+    <section class="quote-section">
+      <blockquote>
+        "You are not alone. Taking care of your mental health is a sign of strength, not weakness."
+      </blockquote>
+      <a href="resources.html" class="cta-secondary">Explore More Resources</a>
     </section>
   </main>
-
-  <footer>
-    <p>© 2025 DeepSpace. Empowering teen minds, one star at a time.</p>
-  </footer>
-</body>
-</html>
+  

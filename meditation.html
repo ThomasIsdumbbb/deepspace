@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Meditation - DeepSpace</title>
+  <link rel="stylesheet" href="styles/main.css">
+  <script defer src="scripts/meditation.js"></script>
+  <style>
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #07094E;
+      color: white;
+      animation: slideDown 0.6s ease-out;
+    }
+
+    .left-logo img {
+      height: 40px;
+      transition: transform 0.3s ease;
+    }
+
+    .left-logo img:hover {
+      transform: scale(1.1);
+    }
+
+    .center-nav {
+      display: flex;
+      flex-grow: 1;
+      justify-content: center;
+    }
+
+    .center-nav a {
+      margin: 0 0.8rem;
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    .center-nav a:hover {
+      color: #A988F4;
+    }
+
+    .auth-button {
+      margin-left: 1rem;
+      padding: 0.5rem 1rem;
+      border: 1px solid #A988F4;
+      border-radius: 8px;
+      background-color: transparent;
+      color: #A988F4;
+      font-weight: bold;
+      transition: all 0.3s ease;
+    }
+
+    .auth-button:hover {
+      background-color: #A988F4;
+      color: #07094E;
+    }
+
+    .right-auth {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+    }
+
+    @keyframes slideDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar">
+      <div class="left-logo">
+        <a href="index.html">
+          <img src="assets/logo.png" alt="DeepSpace Logo" class="logo">
+        </a>
+      </div>
+      <div class="center-nav">
+        <a href="index.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="resources.html">Resources</a>
+        <a href="contact.html">Contact</a>
+        <a href="meditation.html" class="active">Meditation</a>
+      </div>
+      <div class="right-auth">
+        <a href="login.html" class="auth-button">Log In</a>
+        <a href="register.html" class="auth-button">Sign Up</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="content">
+    <h1>Meditation Zone</h1>
+    <p>Take a few minutes to relax and breathe deeply.</p>
+
+    <div class="meditation-tools">
+      <div class="timer">
+        <h2 id="timer-display">05:00</h2>
+        <button onclick="startTimer()">Start</button>
+        <button onclick="pauseTimer()">Pause</button>
+        <button onclick="resetTimer()">Reset</button>
+      </div>
+
+      <div class="audio-control">
+        <h3>Background Audio</h3>
+        <select id="track-selector" onchange="changeTrack()">
+          <option value="assets/tracks/rainy.mp3">Rainy</option>
+          <option value="assets/tracks/windy.mp3">Windy</option>
+          <option value="assets/tracks/ocean.mp3">Ocean</option>
+          <option value="assets/tracks/forest.mp3">Forest</option>
+          <option value="assets/tracks/stream.mp3">Stream</option>
+          <option value="assets/tracks/mountain.mp3">Mountain</option>
+          <option value="assets/tracks/fireplace.mp3">Fireplace</option>
+          <option value="assets/tracks/thunderstorm.mp3">Thunderstorm</option>
+          <option value="assets/tracks/night.mp3">Night</option>
+          <option value="assets/tracks/earlymorning.mp3">Early Morning</option>
+          <option value="assets/tracks/whitenoise.mp3">White Noise</option>
+          <option value="assets/tracks/breeze.mp3">Breeze</option>
+          <option value="assets/tracks/cave.mp3">Cave</option>
+          <option value="assets/tracks/crickets.mp3">Crickets</option>
+          <option value="assets/tracks/deepsea.mp3">Deep Sea</option>
+          <option value="assets/tracks/meditationbell.mp3">Meditation Bell</option>
+          <option value="assets/tracks/chimes.mp3">Chimes</option>
+          <option value="assets/tracks/birds.mp3">Birds</option>
+          <option value="assets/tracks/jungle.mp3">Jungle</option>
+          <option value="assets/tracks/zen.mp3">Zen</option>
+        </select>
+
+        <audio id="meditation-audio" loop>
+          <source src="assets/tracks/rainy.mp3" type="audio/mp3">
+          Your browser does not support the audio element.
+        </audio>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 DeepSpace. All rights reserved.</p>
+  </footer>
+</body>
+</html>
